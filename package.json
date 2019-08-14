@@ -1,0 +1,30 @@
+{
+  "name": "book-dataset",
+  "version": "1.0.0",
+  "description": "This dataset contains 207,572 books from the Amazon.com, Inc. marketplace.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamjeanlaurent/Book-Recommender.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamjeanlaurent/Book-Recommender/issues"
+  },
+  "homepage": "https://github.com/adamjeanlaurent/Book-Recommender#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "csv-parse": "^4.4.5",
+    "csv-parser": "^2.3.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}
