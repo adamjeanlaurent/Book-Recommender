@@ -22,8 +22,9 @@ app.post('/', (req, res) => {
     .pipe(csv(['amazonIndex', 'filename', 'imageURL', 'title', 'author', 'categoryID', 'category']))
     // parses CSV, finds all the books with the requested category
     .on('data', (data) => {
-      if(data.categoryID == '25')
-      results.push(data)
+      if(data.categoryID == req.body.bookType) {
+        results.push(data);
+      }
     })
     .on('end', () => {
       // send random book from that category
