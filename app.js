@@ -1,3 +1,6 @@
+// style everything
+// pull books from database instead of parsing CVS each time
+
 const csv = require('csv-parser');
 const fs = require('fs');
 const express = require('express');
@@ -5,6 +8,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 app.set("view engine", "ejs");   
 
 const results = [];
@@ -30,10 +34,8 @@ app.post('/', (req, res) => {
       // send random book from that category
       let randomNum = Math.floor((Math.random() * results.length) + 1)
       let rb = results[randomNum];
-      res.render('book', {title: rb.title, author: rb.author, image: rb.imageURL});
+      res.render('book', {title: rb.title, author: rb.author, image: rb.imageURL, bookLink: rb.amazonIndex});
     });
-  
-   
   }
 });
 
